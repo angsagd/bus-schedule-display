@@ -1,7 +1,21 @@
-let dataKolom = {"keberangkatan":{"nomer":0,"seri":1,"plat":0,"mesin":1,"tujuan":1,"waktu":1,"status":1},"kedatangan":{"nomer":0,"seri":1,"plat":0,"mesin":1,"tujuan":1,"waktu":1,"status":1}}
+let dataKolom = {"keberangkatan":{"nomer":0,"seri":1,"plat":0,"mesin":1,"kota":1,"waktu":1,"status":1},"kedatangan":{"nomer":0,"seri":1,"plat":0,"mesin":1,"kota":1,"waktu":1,"status":1}}
 let dataJadwal = {
-  'keberangkatan': [],
-  'kedatangan': []
+  'keberangkatan': [
+    {"nomer":"1","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"2","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"3","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"4","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"5","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"6","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"}
+  ],
+  'kedatangan': [
+    {"nomer":"1","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"2","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"3","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"4","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"5","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
+    {"nomer":"6","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"}
+  ]
 }
 
 if (typeof(Storage) === "undefined") {

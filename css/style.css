@@ -5,5 +5,12 @@ td.text-end.text-nowrap img {
   cursor: pointer;
 }
 #teks-waktu {
-  width: 80px;
+  width: 64px;
+}
+.data-jadwal {
+  background-color: #fff0;
+}
+
+.data-jadwal:focus {
+  box-shadow: none;
 }

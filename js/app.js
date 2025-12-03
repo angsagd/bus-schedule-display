@@ -22,9 +22,26 @@ $(function() {
       localStorage.setItem('kolom', JSON.stringify(dataKolom));
   });
 
+  let newTab = null;
+
+  $('.link-jadwal').on('click', function(e) {
+      e.preventDefault(); // cegah perilaku default <a>
+
+      const url = $(this).attr('href');
+
+      // buka tab bernama "link_unik"
+      newTab = window.open(url, 'link_unik');
+
+      // fokus jika sudah ada
+      if (newTab) {
+          newTab.focus();
+      }
+  });
+
 });
 
 // fungsi-fungsi
+
 
 function applyDataKolom(dataKolom) {
   $('.data-kolom').each(function () {
