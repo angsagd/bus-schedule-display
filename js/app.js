@@ -9,6 +9,7 @@ $(function() {
   });
 
   applyDataKolom(dataKolom);
+  applyDataJadwal(dataJadwal);
   
   $('.data-kolom').on('change', function () {
       const section = $(this).data('section');  // "keberangkatan" atau "kedatangan"
@@ -22,6 +23,12 @@ $(function() {
       localStorage.setItem('kolom', JSON.stringify(dataKolom));
   });
 
+  $('.data-jadwal').on('change', function () {
+    currentDataJadwal = collectDataJadwal();
+    localStorage.setItem('jadwal', JSON.stringify(currentDataJadwal));
+  });
+
+  // menangani link jadwal
   let newTab = null;
 
   $('.link-jadwal').on('click', function(e) {
@@ -69,3 +76,57 @@ function collectDataKolom() {
 
   return result;
 }
+
+function applyDataJadwal(dataJadwal) {
+  $('.jadwal-tabel').each(function () {
+    const section = $(this).data('section'); // 'keberangkatan' / 'kedatangan'
+    const rows    = dataJadwal[section] || [];
+
+    $(this).find('tbody tr[data-index]').each(function () {
+      const idx     = parseInt($(this).data('index'), 10);
+      const rowData = rows[idx];
+      if (!rowData) return; // jaga-jaga kalau data tidak cukup
+
+      $(this).find('.data-jadwal').each(function () {
+        const field = $(this).data('field');
+        if (field in rowData) {
+          $(this).val(rowData[field]);
+        }
+      });
+    });
+  });
+}
+
+function collectDataJadwal() {
+  const result = {};
+
+  $('.jadwal-tabel').each(function () {
+    const section = $(this).data('section'); // 'keberangkatan' / 'kedatangan'
+    const rows = [];
+
+    $(this).find('tbody tr[data-index]').each(function () {
+      const rowObj = {};
+
+      $(this).find('.data-jadwal').each(function () {
+        const field = $(this).data('field');
+        const value = $(this).val();
+        rowObj[field] = value;
+      });
+
+      // Jika field 'nomer' tidak ada / tidak di-bind, bisa fallback:
+      if (!('nomer' in rowObj)) {
+        rowObj.nomer = String(
+          $(this).data('nomer') ||
+          (parseInt($(this).data('index'), 10) + 1)
+        );
+      }
+
+      rows.push(rowObj);
+    });
+
+    result[section] = rows;
+  });
+
+  return result;
+}
+  

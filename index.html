@@ -36,7 +36,7 @@
           </a>
         </h2>
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover jadwal-tabel" id="tabel-keberangkatan" data-section="keberangkatan">
             <thead>
               <tr>
                 <th scope="col" class="form-check d-table-cell ps-4">
@@ -73,15 +73,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 1" id="nomer11" value="1" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #1" name="seri11" id="seri11"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #1" name="plat11" id="plat11"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #1" name="mesin11" id="mesin11"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #1" name="kota11" id="kota11"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="waktu11" id="waktu11"></td>
+              <tr scope="row" data-index="0" data-nomer="1">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 1" id="keberangkatan-nomer-1" name="keberangkatan-nomer-1" value="1" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #1" name="keberangkatan-seri-1" id="keberangkatan-seri-1"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #1" name="keberangkatan-plat-1" id="keberangkatan-plat-1"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #1" name="keberangkatan-mesin-1" id="keberangkatan-mesin-1"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #1" name="keberangkatan-kota-1" id="keberangkatan-kota-1"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="keberangkatan-waktu-1" id="keberangkatan-waktu-1"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status11" id="status11" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="keberangkatan-status-1" id="keberangkatan-status-1" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
                     <option value="Sudah Berangkat">Sudah Berangkat</option>
                     <option value="Segera Berangkat">Segera Berangkat</option>
@@ -95,15 +95,15 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 2" id="nomer12" value="2" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #2" name="seri12" id="seri12"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #2" name="plat12" id="plat12"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #2" name="mesin12" id="mesin12"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #2" name="kota12" id="kota12"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="waktu12" id="waktu12"></td>
+              <tr scope="row" data-index="1" data-nomer="2">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 2" id="keberangkatan-nomer-2" value="2" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #2" name="keberangkatan-seri-2" id="keberangkatan-seri-2"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #2" name="keberangkatan-plat-2" id="keberangkatan-plat-2"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #2" name="keberangkatan-mesin-2" id="keberangkatan-mesin-2"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #2" name="keberangkatan-kota-2" id="keberangkatan-kota-2"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="keberangkatan-waktu-2" id="keberangkatan-waktu-2"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status12" id="status12" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="keberangkatan-status-2" id="keberangkatan-status-2" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
                     <option value="Sudah Berangkat">Sudah Berangkat</option>
                     <option value="Segera Berangkat">Segera Berangkat</option>
@@ -117,15 +117,15 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 3" id="nomer13" value="3" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #3" name="seri13" id="seri13"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #3" name="plat13" id="plat13"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #3" name="mesin13" id="mesin13"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #3" name="kota13" id="kota13"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="waktu13" id="waktu13"></td>
+              <tr scope="row" data-index="2" data-nomer="3">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 3" id="keberangkatan-nomer-3" value="3" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #3" name="keberangkatan-seri-3" id="keberangkatan-seri-3"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #3" name="keberangkatan-plat-3" id="keberangkatan-plat-3"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #3" name="keberangkatan-mesin-3" id="keberangkatan-mesin-3"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #3" name="keberangkatan-kota-3" id="keberangkatan-kota-3"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="keberangkatan-waktu-3" id="keberangkatan-waktu-3"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status13" id="status13" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="keberangkatan-status-3" id="keberangkatan-status-3" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
                     <option value="Sudah Berangkat">Sudah Berangkat</option>
                     <option value="Segera Berangkat">Segera Berangkat</option>
@@ -139,15 +139,15 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 4" id="nomer14" value="4" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #4" name="seri14" id="seri14"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #4" name="plat14" id="plat14"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #4" name="mesin14" id="mesin14"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #4" name="kota14" id="kota14"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="waktu14" id="waktu14"></td>
+              <tr scope="row" data-index="3" data-nomer="4">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 4" id="keberangkatan-nomer-4" value="4" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #4" name="keberangkatan-seri-4" id="keberangkatan-seri-4"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #4" name="keberangkatan-plat-4" id="keberangkatan-plat-4"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #4" name="keberangkatan-mesin-4" id="keberangkatan-mesin-4"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #4" name="keberangkatan-kota-4" id="keberangkatan-kota-4"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="keberangkatan-waktu-4" id="keberangkatan-waktu-4"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status14" id="status14" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="keberangkatan-status-4" id="keberangkatan-status-4" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
                     <option value="Sudah Berangkat">Sudah Berangkat</option>
                     <option value="Segera Berangkat">Segera Berangkat</option>
@@ -161,15 +161,15 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 5" id="nomer15" value="5" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #5" name="seri15" id="seri15"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #5" name="plat15" id="plat15"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #5" name="mesin15" id="mesin15"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #5" name="kota15" id="kota15"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="waktu15" id="waktu15"></td>
+              <tr scope="row" data-index="4" data-nomer="5">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 5" id="keberangkatan-nomer-5" value="5" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #5" name="keberangkatan-seri-5" id="keberangkatan-seri-5"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #5" name="keberangkatan-plat-5" id="keberangkatan-plat-5"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #5" name="keberangkatan-mesin-5" id="keberangkatan-mesin-5"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #5" name="keberangkatan-kota-5" id="keberangkatan-kota-5"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="keberangkatan-waktu-5" id="keberangkatan-waktu-5"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status15" id="status15" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="keberangkatan-status-5" id="keberangkatan-status-5" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
                     <option value="Sudah Berangkat">Sudah Berangkat</option>
                     <option value="Segera Berangkat">Segera Berangkat</option>
@@ -183,15 +183,15 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 6" id="nomer16" value="6" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #6" name="seri16" id="seri16"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #6" name="plat16" id="plat16"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #6" name="mesin16" id="mesin16"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #6" name="kota16" id="kota16"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="waktu16" id="waktu16"></td>
+              <tr scope="row" data-index="5" data-nomer="6">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 6" id="keberangkatan-nomer-6" value="6" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #6" name="keberangkatan-seri-6" id="keberangkatan-seri-6"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #6" name="keberangkatan-plat-6" id="keberangkatan-plat-6"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #6" name="keberangkatan-mesin-6" id="keberangkatan-mesin-6"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #6" name="keberangkatan-kota-6" id="keberangkatan-kota-6"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Keberangkatan" name="keberangkatan-waktu-6" id="keberangkatan-waktu-6"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status16" id="status16" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="keberangkatan-status-6" id="keberangkatan-status-6" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
                     <option value="Sudah Berangkat">Sudah Berangkat</option>
                     <option value="Segera Berangkat">Segera Berangkat</option>
@@ -221,7 +221,7 @@
           </a>
         </h2>
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover jadwal-tabel" id="tabel-kedatangan" data-section="kedatangan">
             <thead>
               <tr>
                 <th scope="col" class="form-check d-table-cell ps-4">
@@ -258,18 +258,18 @@
               </tr>
             </thead>
             <tbody>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 1" id="nomer21" value="1" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #1" name="seri21" id="seri21"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #2" name="plat21" id="plat21"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #2" name="mesin21" id="mesin21"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #2" name="kota21" id="kota21"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="waktu21" id="waktu21"></td>
+              <tr scope="row" data-index="0" data-nomer="1">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 1" id="kedatangan-nomer-1" value="1" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #1" name="kedatangan-seri-1" id="kedatangan-seri-1"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #2" name="kedatangan-plat-1" id="kedatangan-plat-1"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #2" name="kedatangan-mesin-1" id="kedatangan-mesin-1"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #2" name="kedatangan-kota-1" id="kedatangan-kota-1"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="kedatangan-waktu-1" id="kedatangan-waktu-1"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status21" id="status21" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="kedatangan-status-1" id="kedatangan-status-1" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
-                    <option value="Sudah Berangkat">Sudah Berangkat</option>
-                    <option value="Segera Berangkat">Segera Berangkat</option>
+                    <option value="Sudah Tiba">Sudah Tiba</option>
+                    <option value="Segera Tiba">Segera Tiba</option>
                     <option value="Sesuai Jadwal">Sesuai Jadwal</option>
                     <option value="Diundur">Diundur</option>
                     <option value="Dibatalkan">Dibatalkan</option>
@@ -280,18 +280,18 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 2" id="nomer22" value="2" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #2" name="seri22" id="seri22"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #2" name="plat22" id="plat22"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #2" name="mesin22" id="mesin22"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #2" name="kota22" id="kota22"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="waktu22" id="waktu22"></td>
+              <tr scope="row" data-index="1" data-nomer="2">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 2" id="kedatangan-nomer-2" value="2" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #2" name="kedatangan-seri-2" id="kedatangan-seri-2"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #2" name="kedatangan-plat-2" id="kedatangan-plat-2"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #2" name="kedatangan-mesin-2" id="kedatangan-mesin-2"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #2" name="kedatangan-kota-2" id="kedatangan-kota-2"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="kedatangan-waktu-2" id="kedatangan-waktu-2"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status22" id="status22" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="kedatangan-status-2" id="kedatangan-status-2" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
-                    <option value="Sudah Berangkat">Sudah Berangkat</option>
-                    <option value="Segera Berangkat">Segera Berangkat</option>
+                    <option value="Sudah Tiba">Sudah Tiba</option>
+                    <option value="Segera Tiba">Segera Tiba</option>
                     <option value="Sesuai Jadwal">Sesuai Jadwal</option>
                     <option value="Diundur">Diundur</option>
                     <option value="Dibatalkan">Dibatalkan</option>
@@ -302,18 +302,18 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 3" id="nomer23" value="3" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #3" name="seri23" id="seri23"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #3" name="plat23" id="plat23"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #3" name="mesin23" id="mesin23"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #3" name="kota23" id="kota23"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="waktu23" id="waktu23"></td>
+              <tr scope="row" data-index="2" data-nomer="3">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 3" id="kedatangan-nomer-3" value="3" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #3" name="kedatangan-seri-3" id="kedatangan-seri-3"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #3" name="kedatangan-plat-3" id="kedatangan-plat-3"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #3" name="kedatangan-mesin-3" id="kedatangan-mesin-3"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #3" name="kedatangan-kota-3" id="kedatangan-kota-3"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="kedatangan-waktu-3" id="kedatangan-waktu-3"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status23" id="status23" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="kedatangan-status-3" id="kedatangan-status-3" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
-                    <option value="Sudah Berangkat">Sudah Berangkat</option>
-                    <option value="Segera Berangkat">Segera Berangkat</option>
+                    <option value="Sudah Tiba">Sudah Tiba</option>
+                    <option value="Segera Tiba">Segera Tiba</option>
                     <option value="Sesuai Jadwal">Sesuai Jadwal</option>
                     <option value="Diundur">Diundur</option>
                     <option value="Dibatalkan">Dibatalkan</option>
@@ -324,18 +324,18 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 4" id="nomer24" value="4" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #4" name="seri24" id="seri24"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #4" name="plat24" id="plat24"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #4" name="mesin24" id="mesin24"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #4" name="kota24" id="kota24"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="waktu24" id="waktu24"></td>
+              <tr scope="row" data-index="3" data-nomer="4">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 4" id="kedatangan-nomer-4" value="4" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #4" name="kedatangan-seri-4" id="kedatangan-seri-4"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #4" name="kedatangan-plat-4" id="kedatangan-plat-4"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #4" name="kedatangan-mesin-4" id="kedatangan-mesin-4"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #4" name="kedatangan-kota-4" id="kedatangan-kota-4"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="kedatangan-waktu-4" id="kedatangan-waktu-4"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status24" id="status24" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="kedatangan-status-4" id="kedatangan-status-4" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
-                    <option value="Sudah Berangkat">Sudah Berangkat</option>
-                    <option value="Segera Berangkat">Segera Berangkat</option>
+                    <option value="Sudah Tiba">Sudah Tiba</option>
+                    <option value="Segera Tiba">Segera Tiba</option>
                     <option value="Sesuai Jadwal">Sesuai Jadwal</option>
                     <option value="Diundur">Diundur</option>
                     <option value="Dibatalkan">Dibatalkan</option>
@@ -346,18 +346,18 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 5" id="nomer25" value="5" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #5" name="seri25" id="seri25"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #5" name="plat25" id="plat25"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #5" name="mesin25" id="mesin25"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #5" name="kota25" id="kota25"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="waktu25" id="waktu25"></td>
+              <tr scope="row" data-index="4" data-nomer="5">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 5" id="kedatangan-nomer-5" value="5" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #5" name="kedatangan-seri-5" id="kedatangan-seri-5"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #5" name="kedatangan-plat-5" id="kedatangan-plat-5"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #5" name="kedatangan-mesin-5" id="kedatangan-mesin-5"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #5" name="kedatangan-kota-5" id="kedatangan-kota-5"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="kedatangan-waktu-5" id="kedatangan-waktu-5"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status25" id="status25" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="kedatangan-status-5" id="kedatangan-status-5" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
-                    <option value="Sudah Berangkat">Sudah Berangkat</option>
-                    <option value="Segera Berangkat">Segera Berangkat</option>
+                    <option value="Sudah Tiba">Sudah Tiba</option>
+                    <option value="Segera Tiba">Segera Tiba</option>
                     <option value="Sesuai Jadwal">Sesuai Jadwal</option>
                     <option value="Diundur">Diundur</option>
                     <option value="Dibatalkan">Dibatalkan</option>
@@ -368,18 +368,18 @@
                   <img src="img/arrow-down.svg" alt="Hapus" title="Turun" height="20">
                 </td>
               </tr>
-              <tr scope="row">
-                <td><input class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 6" id="nomer26" value="6" readonly></td>
-                <td><input class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #6" name="seri26" id="seri26"></td>
-                <td><input class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #6" name="plat26" id="plat26"></td>
-                <td><input class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #6" name="mesin26" id="mesin26"></td>
-                <td><input class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #6" name="kota26" id="kota26"></td>
-                <td><input class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="waktu26" id="waktu26"></td>
+              <tr scope="row" data-index="5" data-nomer="6">
+                <td><input data-field="nomer" class="data-jadwal form-control border border-0 col-nomer pe-none user-select-none" type="text" title="Bus 6" id="kedatangan-nomer-6" value="6" readonly></td>
+                <td><input data-field="seri" class="data-jadwal form-control border border-0 col-seri" type="text" placeholder="Seri Bus #6" name="kedatangan-seri-6" id="kedatangan-seri-6"></td>
+                <td><input data-field="plat" class="data-jadwal form-control border border-0 col-plat" type="text" placeholder="Plat Nomer #6" name="kedatangan-plat-6" id="kedatangan-plat-6"></td>
+                <td><input data-field="mesin" class="data-jadwal form-control border border-0 col-mesin" type="text" placeholder="Mesin #6" name="kedatangan-mesin-6" id="kedatangan-mesin-6"></td>
+                <td><input data-field="kota" class="data-jadwal form-control border border-0 col-kota" type="text" placeholder="Kota #6" name="kedatangan-kota-6" id="kedatangan-kota-6"></td>
+                <td><input data-field="waktu" class="data-jadwal form-control border border-0 col-waktu" type="time" value="00:00" title="Waktu Kedatangan" name="kedatangan-waktu-6" id="kedatangan-waktu-6"></td>
                 <td>
-                  <select class="data-jadwal form-select border border-0" name="status26" id="status26" title="Status Keberangkatan">
+                  <select data-field="status" class="data-jadwal form-select border border-0" name="kedatangan-status-6" id="kedatangan-status-6" title="Status Keberangkatan">
                     <option value="" selected disabled>Pilih Status</option>
-                    <option value="Sudah Berangkat">Sudah Berangkat</option>
-                    <option value="Segera Berangkat">Segera Berangkat</option>
+                    <option value="Sudah Tiba">Sudah Tiba</option>
+                    <option value="Segera Tiba">Segera Tiba</option>
                     <option value="Sesuai Jadwal">Sesuai Jadwal</option>
                     <option value="Diundur">Diundur</option>
                     <option value="Dibatalkan">Dibatalkan</option>
