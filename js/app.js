@@ -45,10 +45,53 @@ $(function() {
       }
   });
 
+  // Klik tombol Naik
+  $(document).on('click', '.urutan-naik', function () {
+    const tr = $(this).closest('tr');
+    const table = tr.closest('.jadwal-tabel');
+    const section = table.data('section'); // keberangkatan / kedatangan
+
+    let index = parseInt(tr.data('index'), 10);
+
+    if (index === 0) return; // baris paling atas tidak bisa naik
+
+    // swap di array dataJadwal
+    swapArray(dataJadwal[section], index, index - 1);
+
+    // update nomer baru
+    updateNomer(dataJadwal[section]);
+
+    // simpan & render ulang
+    localStorage.setItem('jadwal', JSON.stringify(dataJadwal));
+    applyDataJadwal(dataJadwal);
+  });
+
+
+  // Klik tombol Turun
+  $(document).on('click', '.urutan-turun', function () {
+    const tr = $(this).closest('tr');
+    const table = tr.closest('.jadwal-tabel');
+    const section = table.data('section');
+
+    let index = parseInt(tr.data('index'), 10);
+    const maxIndex = dataJadwal[section].length - 1;
+
+    if (index === maxIndex) return; // baris paling bawah tidak bisa turun
+
+    // swap
+    swapArray(dataJadwal[section], index, index + 1);
+
+    // update nomer
+    updateNomer(dataJadwal[section]);
+
+    // simpan & render ulang
+    localStorage.setItem('jadwal', JSON.stringify(dataJadwal));
+    applyDataJadwal(dataJadwal);
+  });
+ 
 });
 
 // fungsi-fungsi
-
 
 function applyDataKolom(dataKolom) {
   $('.data-kolom').each(function () {
@@ -129,4 +172,15 @@ function collectDataJadwal() {
 
   return result;
 }
-  
+
+function swapArray(arr, i, j) {
+  const temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+function updateNomer(list) {
+  list.forEach((item, index) => {
+    item.nomer = String(index + 1);
+  });
+}
