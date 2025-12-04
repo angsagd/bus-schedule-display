@@ -62,15 +62,16 @@ $(function() {
 
     if (index === 0) return; // baris paling atas tidak bisa naik
 
+    currentDataJadwal = collectDataJadwal();
     // swap di array dataJadwal
-    swapArray(dataJadwal[section], index, index - 1);
+    swapArray(currentDataJadwal[section], index, index - 1);
 
     // update nomer baru
-    updateNomer(dataJadwal[section]);
+    updateNomer(currentDataJadwal[section]);
 
     // simpan & render ulang
-    localStorage.setItem('jadwal', JSON.stringify(dataJadwal));
-    applyDataJadwal(dataJadwal);
+    localStorage.setItem('jadwal', JSON.stringify(currentDataJadwal));
+    applyDataJadwal(currentDataJadwal);
   });
 
 
@@ -85,15 +86,16 @@ $(function() {
 
     if (index === maxIndex) return; // baris paling bawah tidak bisa turun
 
+    currentDataJadwal = collectDataJadwal();
     // swap
-    swapArray(dataJadwal[section], index, index + 1);
+    swapArray(currentDataJadwal[section], index, index + 1);
 
     // update nomer
-    updateNomer(dataJadwal[section]);
+    updateNomer(currentDataJadwal[section]);
 
     // simpan & render ulang
-    localStorage.setItem('jadwal', JSON.stringify(dataJadwal));
-    applyDataJadwal(dataJadwal);
+    localStorage.setItem('jadwal', JSON.stringify(currentDataJadwal));
+    applyDataJadwal(currentDataJadwal);
   });
  
 });
