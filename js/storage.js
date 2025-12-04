@@ -4,23 +4,23 @@ let dataKolom = {
 };
 let dataJadwal = {
   'keberangkatan': [
-    {"nomer":"1","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"2","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"3","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"4","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"5","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"6","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"}
+    {"nomer":"1","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"2","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"3","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"4","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"5","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"6","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""}
   ],
   'kedatangan': [
-    {"nomer":"1","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"2","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"3","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"4","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"5","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"},
-    {"nomer":"6","seri":"","plat":"","mesin":"","kota":"","waktu":"00:00","status":"Pilih Status"}
+    {"nomer":"1","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"2","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"3","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"4","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"5","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""},
+    {"nomer":"6","seri":"-","plat":"-","mesin":"-","kota":"-","waktu":"00:00","status":""}
   ]
 };
-let dataRunningText = "";
+let dataRunningText = "Informasi untuk seluruh penumpang: Mohon memperhatikan jadwal keberangkatan dan kedatangan bus yang tampil pada monitor. Segera menuju area keberangkatan bila status bus menunjukkan ‘Segera Berangkat’ dan tetap menunggu apabila masih ‘Sesuai Jadwal’. Untuk keterlambatan atau perubahan perjalanan, silakan hubungi petugas. Terima kasih atas perhatian Anda.";
 
 if (typeof(Storage) === "undefined") {
     alert("Browser tidak mendukung Local Storage");
