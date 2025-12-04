@@ -10,6 +10,7 @@ $(function() {
 
   applyDataKolom(dataKolom);
   applyDataJadwal(dataJadwal);
+  $('#running-text').val(dataRunningText);
   
   $('.data-kolom').on('change', function () {
       const section = $(this).data('section');  // "keberangkatan" atau "kedatangan"
@@ -26,6 +27,12 @@ $(function() {
   $('.data-jadwal').on('change', function () {
     currentDataJadwal = collectDataJadwal();
     localStorage.setItem('jadwal', JSON.stringify(currentDataJadwal));
+  });
+
+  $('#running-text').on('input', function () {
+    const value = $(this).val();
+    dataRunningText = value;
+    localStorage.setItem('runningText', dataRunningText);
   });
 
   // menangani link jadwal

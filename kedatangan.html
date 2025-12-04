@@ -6,9 +6,119 @@
   <title>Jadwal Kedatangan || Surya Bali</title>
   <link rel="shortcut icon" href="img/suryabali-square.png" type="image/x-icon">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/storage.js"></script>
+  <style>
+    /* Nonaktifkan scroll halaman */
+    html, body {
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body>
-  
+<body class="bg-light">
+
+    <nav class="navbar navbar-custom bg-primary bg-gradient text-white">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="img/suryabali.png" alt="logo" height="32" class="me-4">
+          <h1 class="fs-3 fw-semibold text-white">Jadwal Kedatangan - Bus Surya Bali</h1>
+        </div>
+        <div class="fs-5">
+          <span class="pe-3" id="teks-tanggal">31 Desember 2025</span>
+          <span class="" id="teks-waktu">10:00:00</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- TABEL -->
+    <div class="container-fluid p-0">
+        <div class="table-wrapper">
+
+          <table class="table table-striped jadwal-tabel" id="tabel-kedatangan" data-section="kedatangan">
+            <thead>
+              <tr>
+                <th scope="col" data-field="nomer" class="bg-secondary bg-gradient text-white col-nomer" id="kolom-kedatangan-nomer">#</th>
+                <th scope="col" data-field="seri" class="bg-secondary bg-gradient text-white col-seri" id="kolom-kedatangan-seri">Seri Bus</th>
+                <th scope="col" data-field="plat" class="bg-secondary bg-gradient text-white col-plat" id="kolom-kedatangan-plat">Plat Nomer</th>
+                <th scope="col" data-field="mesin" class="bg-secondary bg-gradient text-white col-mesin" id="kolom-kedatangan-mesin">Mesin</th>
+                <th scope="col" data-field="kota" class="bg-secondary bg-gradient text-white col-kota" id="kolom-kedatangan-kota">Kota Tujuan</th>
+                <th scope="col" data-field="waktu" class="bg-secondary bg-gradient text-white col-waktu" id="kolom-kedatangan-waktu">Waktu</th>
+                <th scope="col" data-field="status" class="bg-secondary bg-gradient text-white col-status" id="kolom-kedatangan-status">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr scope="row" data-index="0" data-nomer="1">
+                <td data-field="nomer" class="fw-semibold fs-3 bg-info bg-gradient col-nomer" id="kedatangan-nomer-1">1</td>
+                <td data-field="seri" class="fw-semibold fs-3 bg-info bg-gradient col-seri" id="kedatangan-seri-1">Seri A</td>
+                <td data-field="plat" class="fw-semibold fs-3 bg-info bg-gradient col-plat" id="kedatangan-plat-1">DK 1234 ABC</td>
+                <td data-field="mesin" class="fw-semibold fs-3 bg-info bg-gradient col-mesin" id="kedatangan-mesin-1">Hino</td>
+                <td data-field="kota" class="fw-semibold fs-3 bg-info bg-gradient col-kota" id="kedatangan-kota-1">Malang</td>
+                <td data-field="waktu" class="fw-semibold fs-3 bg-info bg-gradient col-waktu" id="kedatangan-waktu-1">19:25</td>
+                <td data-field="status" class="fw-semibold fs-3 bg-info bg-gradient col-status" id="kedatangan-status-1">Sesuai Jadwal</td>
+              </tr>
+              <tr scope="row" data-index="1" data-nomer="2">
+                <td data-field="nomer" class="fw-semibold fs-3 bg-info bg-gradient col-nomer" id="kedatangan-nomer-2">2</td>
+                <td data-field="seri" class="fw-semibold fs-3 bg-info bg-gradient col-seri" id="kedatangan-seri-2">Seri A</td>
+                <td data-field="plat" class="fw-semibold fs-3 bg-info bg-gradient col-plat" id="kedatangan-plat-2">DK 1234 ABC</td>
+                <td data-field="mesin" class="fw-semibold fs-3 bg-info bg-gradient col-mesin" id="kedatangan-mesin-2">Hino</td>
+                <td data-field="kota" class="fw-semibold fs-3 bg-info bg-gradient col-kota" id="kedatangan-kota-2">Malang</td>
+                <td data-field="waktu" class="fw-semibold fs-3 bg-info bg-gradient col-waktu" id="kedatangan-waktu-2">19:25</td>
+                <td data-field="status" class="fw-semibold fs-3 bg-info bg-gradient col-status" id="kedatangan-status-2">Sesuai Jadwal</td>
+              </tr>
+              <tr scope="row" data-index="2" data-nomer="3">
+                <td data-field="nomer" class="fw-semibold fs-3 bg-info bg-gradient col-nomer" id="kedatangan-nomer-3">3</td>
+                <td data-field="seri" class="fw-semibold fs-3 bg-info bg-gradient col-seri" id="kedatangan-seri-3">Seri A</td>
+                <td data-field="plat" class="fw-semibold fs-3 bg-info bg-gradient col-plat" id="kedatangan-plat-3">DK 1234 ABC</td>
+                <td data-field="mesin" class="fw-semibold fs-3 bg-info bg-gradient col-mesin" id="kedatangan-mesin-3">Hino</td>
+                <td data-field="kota" class="fw-semibold fs-3 bg-info bg-gradient col-kota" id="kedatangan-kota-3">Malang</td>
+                <td data-field="waktu" class="fw-semibold fs-3 bg-info bg-gradient col-waktu" id="kedatangan-waktu-3">19:25</td>
+                <td data-field="status" class="fw-semibold fs-3 bg-info bg-gradient col-status" id="kedatangan-status-3">Sesuai Jadwal</td>
+              </tr>
+              <tr scope="row" data-index="3" data-nomer="4">
+                <td data-field="nomer" class="fw-semibold fs-3 bg-info bg-gradient col-nomer" id="kedatangan-nomer-4">4</td>
+                <td data-field="seri" class="fw-semibold fs-3 bg-info bg-gradient col-seri" id="kedatangan-seri-4">Seri A</td>
+                <td data-field="plat" class="fw-semibold fs-3 bg-info bg-gradient col-plat" id="kedatangan-plat-4">DK 1234 ABC</td>
+                <td data-field="mesin" class="fw-semibold fs-3 bg-info bg-gradient col-mesin" id="kedatangan-mesin-4">Hino</td>
+                <td data-field="kota" class="fw-semibold fs-3 bg-info bg-gradient col-kota" id="kedatangan-kota-4">Malang</td>
+                <td data-field="waktu" class="fw-semibold fs-3 bg-info bg-gradient col-waktu" id="kedatangan-waktu-4">19:25</td>
+                <td data-field="status" class="fw-semibold fs-3 bg-info bg-gradient col-status" id="kedatangan-status-4">Sesuai Jadwal</td>
+              </tr>
+              <tr scope="row" data-index="4" data-nomer="5">
+                <td data-field="nomer" class="fw-semibold fs-3 bg-info bg-gradient col-nomer" id="kedatangan-nomer-5">5</td>
+                <td data-field="seri" class="fw-semibold fs-3 bg-info bg-gradient col-seri" id="kedatangan-seri-5">Seri A</td>
+                <td data-field="plat" class="fw-semibold fs-3 bg-info bg-gradient col-plat" id="kedatangan-plat-5">DK 1234 ABC</td>
+                <td data-field="mesin" class="fw-semibold fs-3 bg-info bg-gradient col-mesin" id="kedatangan-mesin-5">Hino</td>
+                <td data-field="kota" class="fw-semibold fs-3 bg-info bg-gradient col-kota" id="kedatangan-kota-5">Malang</td>
+                <td data-field="waktu" class="fw-semibold fs-3 bg-info bg-gradient col-waktu" id="kedatangan-waktu-5">19:25</td>
+                <td data-field="status" class="fw-semibold fs-3 bg-info bg-gradient col-status" id="kedatangan-status-5">Sesuai Jadwal</td>
+              </tr>
+              <tr scope="row" data-index="5" data-nomer="6">
+                <td data-field="nomer" class="fw-semibold fs-3 bg-info bg-gradient col-nomer" id="kedatangan-nomer-6">6</td>
+                <td data-field="seri" class="fw-semibold fs-3 bg-info bg-gradient col-seri" id="kedatangan-seri-6">Seri A</td>
+                <td data-field="plat" class="fw-semibold fs-3 bg-info bg-gradient col-plat" id="kedatangan-plat-6">DK 1234 ABC</td>
+                <td data-field="mesin" class="fw-semibold fs-3 bg-info bg-gradient col-mesin" id="kedatangan-mesin-6">Hino</td>
+                <td data-field="kota" class="fw-semibold fs-3 bg-info bg-gradient col-kota" id="kedatangan-kota-6">Malang</td>
+                <td data-field="waktu" class="fw-semibold fs-3 bg-info bg-gradient col-waktu" id="kedatangan-waktu-6">19:25</td>
+                <td data-field="status" class="fw-semibold fs-3 bg-info bg-gradient col-status" id="kedatangan-status-6">Sesuai Jadwal</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-warning bg-gradient text-center footer-custom">
+      <div class="running-text-container">
+        <span id="running-text" class="running-text"></span>
+      </div>
+    </footer>
+
+  <script src="js/datetime.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jadwal-app.js"></script>
 </body>
 </html>
