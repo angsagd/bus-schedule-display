@@ -1,5 +1,6 @@
+let marquee = null;
+
 $(function() {
-  let lastRunningText = null;
 
   TanggalWaktu.init({
     tanggalSelector: '#teks-tanggal',
@@ -9,18 +10,20 @@ $(function() {
     enableWaktu: true
   });
 
+
   refreshJadwalFromStorage();
   applyKolomVisibility(dataKolom);
-  // Inisialisasi pertama kali saat halaman siap
 
-  lastRunningText = localStorage.getItem('runningText') || '';
-  $('#running-text').text(lastRunningText);
+  // jalankan pertama kali
+  marquee = new MarqueeModule('marquee-text');
+  updateMarqueeFromStorage();
 
+  // cek setiap 1 detik
   setInterval(function () {
     const cfg = loadKolomFromStorage();
     applyKolomVisibility(cfg);
     refreshJadwalFromStorage();
-    refreshRunningText();
+    updateMarqueeFromStorage();
   }, 1000);  
 
 })
@@ -124,15 +127,9 @@ function applyKolomVisibility(cfg) {
   });
 }
 
-function refreshRunningText() {
+function refreshRunningText(lastRunningText) {
     // Ambil dari localStorage
     const current = localStorage.getItem('runningText');
-
-    // Jika tidak ada sama sekali, boleh dibiarkan kosong
-    // atau isi default (opsional):
-    // if (current === null) {
-    //     localStorage.setItem(STORAGE_KEY_RUNNING_TEXT, 'Selamat datang di Aplikasi Monitoring Data');
-    // }
 
     // Hanya update kalau ada perubahan
     if (current !== null && current !== lastRunningText) {
@@ -146,3 +143,9 @@ function refreshRunningText() {
         $el.addClass('running-text');
     }
 }
+
+function updateMarqueeFromStorage() {
+    const txt = localStorage.getItem('runningText') || "Tidak ada pengumuman saat ini.";
+    marquee.setText(txt);
+}
+
