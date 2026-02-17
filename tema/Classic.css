@@ -1,0 +1,72 @@
+.col-nomer {
+  width: 60px;
+}
+td.text-end.text-nowrap img {
+  cursor: pointer;
+}
+#teks-waktu {
+  width: 65px;
+}
+.data-jadwal {
+  background-color: #fff0;
+}
+
+.data-jadwal:focus {
+  box-shadow: none;
+}
+
+/* Tinggi header baru (navbar diperbesar) */
+.navbar-custom {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* Tinggi footer */
+.footer-custom {
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Ruang tabel: layar penuh - header - footer */
+.table-wrapper {
+    height: calc(100vh - 80px - 50px);
+}
+
+/* Bagi tinggi table wrapper menjadi 6 baris, dikurangi tinggi header tabel */
+.table-wrapper tbody tr {
+    height: calc((100vh - 80px - 50px - 42px) / 6);
+}
+
+.table-wrapper td,
+.table-wrapper th {
+    vertical-align: middle;
+}
+
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f00;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee-scroll 60s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
