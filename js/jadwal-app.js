@@ -15,7 +15,7 @@ $(function() {
   applyKolomVisibility(dataKolom);
 
   // jalankan pertama kali
-  marquee = new MarqueeModule('marquee-text');
+  marquee = new MarqueeModule('marquee-text', dataSetting?.speed);
   updateMarqueeFromStorage();
 
   // cek setiap 1 detik
@@ -29,13 +29,17 @@ $(function() {
 })
 
 function loadJadwalFromStorage() {
-  const raw = localStorage.getItem('jadwal');
+  const raw = localStorage.getItem('busSchedule');
   if (!raw) return null;
 
   try {
-    return JSON.parse(raw);    // { keberangkatan: [...], kedatangan: [...] }
+    const parsed = JSON.parse(raw);
+    return {
+      keberangkatan: Array.isArray(parsed?.keberangkatan) ? parsed.keberangkatan : [],
+      kedatangan: Array.isArray(parsed?.kedatangan) ? parsed.kedatangan : []
+    };
   } catch (e) {
-    console.error('Data jadwal di localStorage tidak valid:', e);
+    console.error("Data localStorage 'busSchedule' tidak valid:", e);
     return null;
   }
   
@@ -86,21 +90,22 @@ function refreshJadwalFromStorage() {
 }
 
 function loadKolomFromStorage() {
-  const raw = localStorage.getItem('kolom');
+  const raw = localStorage.getItem('busSchedule');
 
   if (!raw) return dataKolom; // pakai default
 
   try {
     const parsed = JSON.parse(raw);
+    const kolom = parsed?.kolom || {};
 
     // tetap gabungkan dengan data default agar field tidak hilang
     return {
-      keberangkatan: Object.assign({}, dataKolom.keberangkatan, parsed.keberangkatan || {}),
-      kedatangan:   Object.assign({}, dataKolom.kedatangan,   parsed.kedatangan   || {})
+      keberangkatan: Object.assign({}, dataKolom.keberangkatan, kolom.keberangkatan || {}),
+      kedatangan:   Object.assign({}, dataKolom.kedatangan, kolom.kedatangan || {})
     };
 
   } catch (e) {
-    console.error("localStorage 'kolom' invalid, pakai default.", e);
+    console.error("localStorage 'busSchedule' invalid, pakai default kolom.", e);
     return dataKolom;
   }
 }
@@ -128,8 +133,19 @@ function applyKolomVisibility(cfg) {
 }
 
 function refreshRunningText(lastRunningText) {
-    // Ambil dari localStorage
-    const current = localStorage.getItem('runningText');
+    const raw = localStorage.getItem('busSchedule');
+    if (!raw) return;
+
+    let current = null;
+    try {
+      const parsed = JSON.parse(raw);
+      if (typeof parsed?.runningText === 'string') {
+        current = parsed.runningText;
+      }
+    } catch (e) {
+      console.error("Data localStorage 'busSchedule' tidak valid:", e);
+      return;
+    }
 
     // Hanya update kalau ada perubahan
     if (current !== null && current !== lastRunningText) {
@@ -145,7 +161,24 @@ function refreshRunningText(lastRunningText) {
 }
 
 function updateMarqueeFromStorage() {
-    const txt = localStorage.getItem('runningText') || "Tidak ada pengumuman saat ini.";
+    const raw = localStorage.getItem('busSchedule');
+    let txt = "Tidak ada pengumuman saat ini.";
+    let speed = dataSetting?.speed || 60;
+
+    if (raw) {
+      try {
+        const parsed = JSON.parse(raw);
+        if (typeof parsed?.runningText === 'string') {
+          txt = parsed.runningText;
+        }
+        if (typeof parsed?.setting?.speed === 'number') {
+          speed = parsed.setting.speed;
+        }
+      } catch (e) {
+        console.error("Data localStorage 'busSchedule' tidak valid:", e);
+      }
+    }
+
+    marquee.setSpeed(speed);
     marquee.setText(txt);
 }
-

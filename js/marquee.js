@@ -1,7 +1,14 @@
 class MarqueeModule {
-    constructor(elementId) {
+    constructor(elementId, speedSeconds = 60) {
         this.el = document.getElementById(elementId);
         this.lastText = "";
+        this.setSpeed(speedSeconds);
+    }
+
+    setSpeed(speedSeconds) {
+        const speed = Number(speedSeconds);
+        const safeSpeed = Number.isFinite(speed) && speed > 0 ? speed : 60;
+        this.el.style.animationDuration = safeSpeed + "s";
     }
 
     setText(newText) {
