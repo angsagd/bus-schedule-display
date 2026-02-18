@@ -1,4 +1,4 @@
-# Bus Schedule Display - Surya Bali
+# Bus Schedule Display - Surya Bali (versi 2.0)
 
 Aplikasi web ini dibuat **khusus untuk operasional Bus Surya Bali** sebagai papan informasi jadwal di area terminal/loket.
 
