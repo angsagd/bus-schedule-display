@@ -105,18 +105,33 @@ $(function() {
 });
 
 // fungsi-fungsi
+const AVAILABLE_THEMES = ['Classic', 'Modern', 'Aurora', 'Board', 'FidsDark'];
+
+function normalizeThemeName(themeName) {
+  const rawTheme = String(themeName || 'Classic').trim() || 'Classic';
+  return rawTheme.charAt(0).toUpperCase() + rawTheme.slice(1);
+}
 
 function initThemeSetting() {
   const $selectTheme = $('#select-theme');
   if ($selectTheme.length === 0) return;
 
-  const savedTheme = dataSetting?.theme || 'Classic';
-  applyTheme(savedTheme);
-  $selectTheme.val(savedTheme.toLowerCase());
+  const savedTheme = normalizeThemeName(dataSetting?.theme);
+  const validTheme = AVAILABLE_THEMES.includes(savedTheme) ? savedTheme : 'Classic';
+
+  $selectTheme.empty();
+  AVAILABLE_THEMES.forEach(function (theme) {
+    $selectTheme.append($('<option>', { value: theme, text: theme }));
+  });
+
+  applyTheme(validTheme);
+  $selectTheme.val(validTheme);
+  dataSetting = Object.assign({}, dataSetting, { theme: validTheme });
+  saveBusSchedule();
 
   $selectTheme.on('change', function () {
-    const selected = String($(this).val() || 'classic').toLowerCase();
-    const nextTheme = selected.charAt(0).toUpperCase() + selected.slice(1);
+    const selected = normalizeThemeName($(this).val());
+    const nextTheme = AVAILABLE_THEMES.includes(selected) ? selected : 'Classic';
 
     dataSetting = Object.assign({}, dataSetting, { theme: nextTheme });
     applyTheme(nextTheme);
@@ -152,9 +167,12 @@ function initRunningTextSpeed() {
 }
 
 function applyTheme(themeName) {
-  const normalized = String(themeName || 'Classic').toLowerCase();
+  const normalized = normalizeThemeName(themeName);
   const href = 'tema/' + normalized + '.css';
-  $('#active-theme').attr('href', href);
+  const $activeTheme = $('#active-theme');
+  if ($activeTheme.length > 0) {
+    $activeTheme.attr('href', href);
+  }
 }
 
 function applyDataKolom(dataKolom) {

@@ -1,4 +1,5 @@
 let marquee = null;
+let currentDisplayTheme = null;
 
 $(function() {
 
@@ -11,6 +12,7 @@ $(function() {
   });
 
 
+  applyDisplayTheme(dataSetting?.theme);
   refreshJadwalFromStorage();
   applyKolomVisibility(dataKolom);
 
@@ -20,6 +22,7 @@ $(function() {
 
   // cek setiap 1 detik
   setInterval(function () {
+    updateThemeFromStorage();
     const cfg = loadKolomFromStorage();
     applyKolomVisibility(cfg);
     refreshJadwalFromStorage();
@@ -27,6 +30,40 @@ $(function() {
   }, 1000);  
 
 })
+
+function getThemeHref(themeName) {
+  const rawTheme = String(themeName || 'Classic').trim() || 'Classic';
+  const safeTheme = rawTheme.charAt(0).toUpperCase() + rawTheme.slice(1);
+  return 'tema/' + safeTheme + '.css';
+}
+
+function applyDisplayTheme(themeName) {
+  const rawTheme = String(themeName || 'Classic').trim() || 'Classic';
+  const safeTheme = rawTheme.charAt(0).toUpperCase() + rawTheme.slice(1);
+  if (currentDisplayTheme === safeTheme) return;
+
+  const $themeLink = $('#active-display-theme');
+  if ($themeLink.length === 0) return;
+
+  $themeLink.attr('href', getThemeHref(safeTheme));
+  document.body.setAttribute('data-display-theme', safeTheme.toLowerCase());
+  currentDisplayTheme = safeTheme;
+}
+
+function updateThemeFromStorage() {
+  const raw = localStorage.getItem('busSchedule');
+  if (!raw) return;
+
+  try {
+    const parsed = JSON.parse(raw);
+    const themeName = parsed?.setting?.theme;
+    if (typeof themeName === 'string' && themeName.trim()) {
+      applyDisplayTheme(themeName);
+    }
+  } catch (e) {
+    console.error("Data localStorage 'busSchedule' tidak valid:", e);
+  }
+}
 
 function loadJadwalFromStorage() {
   const raw = localStorage.getItem('busSchedule');

@@ -1,17 +1,20 @@
 :root {
-  --display-bg: #f8f9fa;
-  --display-navbar-bg: linear-gradient(180deg, #0d6efd 0%, #0b5ed7 100%);
-  --display-navbar-fg: #ffffff;
-  --display-head-bg: linear-gradient(180deg, #6c757d 0%, #5c636a 100%);
-  --display-head-fg: #ffffff;
-  --display-cell-bg: linear-gradient(180deg, #0dcaf0 0%, #31d2f2 100%);
-  --display-cell-fg: #111827;
-  --display-footer-bg: linear-gradient(180deg, #ffc107 0%, #ffca2c 100%);
-  --display-running-text-fg: #dc3545;
+  --display-bg: #f3f4f6;
+  --display-navbar-bg: linear-gradient(135deg, #111827 0%, #1f2937 55%, #0f766e 100%);
+  --display-navbar-fg: #e5e7eb;
+  --display-head-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --display-head-fg: #f8fafc;
+  --display-cell-bg: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  --display-cell-fg: #0f172a;
+  --display-footer-bg: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+  --display-running-text-fg: #f8fafc;
 }
 
 .display-page {
-  background: var(--display-bg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(20, 184, 166, 0.08), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(99, 102, 241, 0.06), transparent 40%),
+    var(--display-bg);
 }
 
 .col-nomer {
@@ -31,6 +34,7 @@
 .display-navbar {
   background: var(--display-navbar-bg);
   color: var(--display-navbar-fg);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
 }
 
 .display-navbar #teks-tanggal,
@@ -66,11 +70,17 @@
 .display-col-head {
   background: var(--display-head-bg);
   color: var(--display-head-fg);
+  border-bottom: 0;
+  letter-spacing: 0.02em;
 }
 
 .display-cell {
   background: var(--display-cell-bg);
   color: var(--display-cell-fg);
+}
+
+.display-table > tbody > tr:nth-child(even) .display-cell {
+  filter: brightness(0.98);
 }
 
 .marquee-container {
@@ -79,7 +89,7 @@
   white-space: nowrap;
   width: 100%;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--display-running-text-fg);
 }
 
