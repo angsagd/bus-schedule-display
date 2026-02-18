@@ -18,7 +18,7 @@
       <ul class="nav nav-pills align-items-center">
         <li class="nav-item">
           <span class="d-flex align-items-center me-5">
-            <select class="form-select" name="theme" id="select-theme" title="Pilih Tema Tampilan">
+            <select class="form-select" name="theme" id="select-theme" title="Pilih Tema Tampilan"  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Pilih Tema Tampilan">
               <option value="classic">Classic</option>
             </select>
           </span>
@@ -406,7 +406,7 @@
             <img src="img/arrow-left.svg" alt="icon" height="24" class="me-2">
             Running Text
           </label>
-          <input type="number" class="form-control w-auto ms-5" id="running-text-speed" name="running-text-speed" placeholder="Kecepatan (ms)" value="60">
+          <input type="number" class="form-control w-auto ms-5" id="running-text-speed" name="running-text-speed" placeholder="Kecepatan" value="60" min="10" max="1000" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Kecepatan Running Text">
         </h2>
         <textarea class="form-control" name="running-text" id="running-text"></textarea>
       </div>
