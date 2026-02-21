@@ -1,3 +1,6 @@
+// Available themes (harus sesuai nama file CSS di folder tema, tanpa ekstensi .css)
+const AVAILABLE_THEMES = ['Classic', 'Modern', 'Aurora', 'Board', 'Night'];
+
 $(function() {
 
   TanggalWaktu.init({
@@ -10,6 +13,8 @@ $(function() {
 
   applyDataKolom(dataKolom);
   applyDataJadwal(dataJadwal);
+  initThemeSetting();
+  initRunningTextSpeed();
   $('#running-text').val(dataRunningText);
   
   $('.data-kolom').on('change', function () {
@@ -20,19 +25,19 @@ $(function() {
       // Update variabel dataKolom
       dataKolom[section][field] = value;
 
-      // Simpan perubahan ke localStorage
-      localStorage.setItem('kolom', JSON.stringify(dataKolom));
+      saveBusSchedule();
   });
 
   $('.data-jadwal').on('change', function () {
     currentDataJadwal = collectDataJadwal();
-    localStorage.setItem('jadwal', JSON.stringify(currentDataJadwal));
+    dataJadwal = currentDataJadwal;
+    saveBusSchedule();
   });
 
   $('#running-text').on('input', function () {
     const value = $(this).val();
     dataRunningText = value;
-    localStorage.setItem('runningText', dataRunningText);
+    saveBusSchedule();
   });
 
   // menangani link jadwal
@@ -70,7 +75,8 @@ $(function() {
     updateNomer(currentDataJadwal[section]);
 
     // simpan & render ulang
-    localStorage.setItem('jadwal', JSON.stringify(currentDataJadwal));
+    dataJadwal = currentDataJadwal;
+    saveBusSchedule();
     applyDataJadwal(currentDataJadwal);
   });
 
@@ -94,13 +100,82 @@ $(function() {
     updateNomer(currentDataJadwal[section]);
 
     // simpan & render ulang
-    localStorage.setItem('jadwal', JSON.stringify(currentDataJadwal));
+    dataJadwal = currentDataJadwal;
+    saveBusSchedule();
     applyDataJadwal(currentDataJadwal);
   });
  
 });
 
 // fungsi-fungsi
+
+function normalizeThemeName(themeName) {
+  const rawTheme = String(themeName || 'Classic').trim() || 'Classic';
+  return rawTheme.charAt(0).toUpperCase() + rawTheme.slice(1);
+}
+
+function initThemeSetting() {
+  const $selectTheme = $('#select-theme');
+  if ($selectTheme.length === 0) return;
+
+  const savedTheme = normalizeThemeName(dataSetting?.theme);
+  const validTheme = AVAILABLE_THEMES.includes(savedTheme) ? savedTheme : 'Classic';
+
+  $selectTheme.empty();
+  AVAILABLE_THEMES.forEach(function (theme) {
+    $selectTheme.append($('<option>', { value: theme, text: theme }));
+  });
+
+  applyTheme(validTheme);
+  $selectTheme.val(validTheme);
+  dataSetting = Object.assign({}, dataSetting, { theme: validTheme });
+  saveBusSchedule();
+
+  $selectTheme.on('change', function () {
+    const selected = normalizeThemeName($(this).val());
+    const nextTheme = AVAILABLE_THEMES.includes(selected) ? selected : 'Classic';
+
+    dataSetting = Object.assign({}, dataSetting, { theme: nextTheme });
+    applyTheme(nextTheme);
+    saveBusSchedule();
+  });
+}
+
+function initRunningTextSpeed() {
+  const $speedInput = $('#running-text-speed');
+  if ($speedInput.length === 0) return;
+
+  const currentSpeed = Number(dataSetting?.speed);
+  const safeSpeed = Number.isFinite(currentSpeed) && currentSpeed > 0 ? currentSpeed : 60;
+
+  dataSetting = Object.assign({}, dataSetting, { speed: safeSpeed });
+  $speedInput.val(safeSpeed);
+
+  $speedInput.on('input change', function () {
+    const value = Number($(this).val());
+    if (!Number.isFinite(value) || value <= 0) return;
+
+    dataSetting = Object.assign({}, dataSetting, { speed: value });
+    saveBusSchedule();
+  });
+
+  $speedInput.on('blur', function () {
+    const value = Number($(this).val());
+    const nextSpeed = Number.isFinite(value) && value > 0 ? value : (dataSetting?.speed || 60);
+    dataSetting = Object.assign({}, dataSetting, { speed: nextSpeed });
+    $(this).val(nextSpeed);
+    saveBusSchedule();
+  });
+}
+
+function applyTheme(themeName) {
+  const normalized = normalizeThemeName(themeName);
+  const href = 'tema/' + normalized + '.css';
+  const $activeTheme = $('#active-theme');
+  if ($activeTheme.length > 0) {
+    $activeTheme.attr('href', href);
+  }
+}
 
 function applyDataKolom(dataKolom) {
   $('.data-kolom').each(function () {

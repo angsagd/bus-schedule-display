@@ -1,0 +1,117 @@
+:root {
+  --display-bg: #f7f9fc;
+  --display-navbar-bg: linear-gradient(135deg, #312e81 0%, #2563eb 45%, #06b6d4 100%);
+  --display-navbar-fg: #f8fafc;
+  --display-head-bg: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --display-head-fg: #e2e8f0;
+  --display-cell-bg: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 55%, #ede9fe 100%);
+  --display-cell-fg: #0f172a;
+  --display-footer-bg: linear-gradient(135deg, #0f766e 0%, #22c55e 100%);
+  --display-running-text-fg: #ecfeff;
+}
+
+.display-page {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.15), transparent 42%),
+    radial-gradient(circle at 85% 8%, rgba(139, 92, 246, 0.12), transparent 35%),
+    var(--display-bg);
+}
+
+.col-nomer {
+  width: 60px;
+}
+
+#teks-waktu {
+  width: 65px;
+}
+
+.navbar-custom {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.display-navbar {
+  background: var(--display-navbar-bg);
+  color: var(--display-navbar-fg);
+  box-shadow: 0 10px 26px rgba(30, 41, 59, 0.28);
+}
+
+.display-navbar #teks-tanggal,
+.display-navbar #teks-waktu,
+.display-title {
+  color: var(--display-navbar-fg);
+}
+
+.footer-custom {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.display-footer {
+  background: var(--display-footer-bg);
+}
+
+.table-wrapper {
+  height: calc(100vh - 80px - 50px);
+}
+
+.table-wrapper tbody tr {
+  height: calc((100vh - 80px - 50px - 42px) / 6);
+}
+
+.table-wrapper td,
+.table-wrapper th {
+  vertical-align: middle;
+}
+
+.display-col-head {
+  background: var(--display-head-bg);
+  color: var(--display-head-fg);
+  border-bottom: 0;
+}
+
+.display-table {
+  --bs-table-color: var(--display-cell-fg);
+  --bs-table-striped-color: var(--display-cell-fg);
+}
+
+.display-table thead {
+  --bs-table-color: var(--display-head-fg);
+}
+
+.display-cell {
+  background: var(--display-cell-bg);
+  color: var(--display-cell-fg);
+}
+
+.display-table > tbody > tr:nth-child(even) .display-cell {
+  filter: brightness(0.985);
+}
+
+.marquee-container {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--display-running-text-fg);
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee-scroll 60s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

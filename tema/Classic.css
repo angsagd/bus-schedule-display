@@ -1,0 +1,104 @@
+:root {
+  --display-bg: #f8f9fa;
+  --display-navbar-bg: linear-gradient(180deg, #1361d6 0%, #043d92 100%);
+  --display-navbar-fg: #ffffff;
+  --display-head-bg: linear-gradient(180deg, #6c757d 0%, #5c636a 100%);
+  --display-head-fg: #ffffff;
+  --display-cell-bg: linear-gradient(180deg, #0fa4c2 0%, #037e97 100%);
+  --display-cell-fg: #ffffff;
+  --display-footer-bg: linear-gradient(180deg, #ffc107 0%, #ffca2c 100%);
+  --display-running-text-fg: #dc3545;
+}
+
+.display-page {
+  background: var(--display-bg);
+}
+
+.col-nomer {
+  width: 60px;
+}
+
+#teks-waktu {
+  width: 65px;
+}
+
+.navbar-custom {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.display-navbar {
+  background: var(--display-navbar-bg);
+  color: var(--display-navbar-fg);
+}
+
+.display-navbar #teks-tanggal,
+.display-navbar #teks-waktu,
+.display-title {
+  color: var(--display-navbar-fg);
+}
+
+.footer-custom {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.display-footer {
+  background: var(--display-footer-bg);
+}
+
+.table-wrapper {
+  height: calc(100vh - 80px - 50px);
+}
+
+.table-wrapper tbody tr {
+  height: calc((100vh - 80px - 50px - 42px) / 6);
+}
+
+.table-wrapper td,
+.table-wrapper th {
+  vertical-align: middle;
+}
+
+.display-col-head {
+  background: var(--display-head-bg);
+  color: var(--display-head-fg);
+}
+
+.display-table {
+  --bs-table-color: var(--display-cell-fg);
+  --bs-table-striped-color: var(--display-cell-fg);
+}
+
+.display-cell {
+  background: var(--display-cell-bg);
+  color: var(--display-cell-fg);
+}
+
+.marquee-container {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--display-running-text-fg);
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee-scroll 60s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
