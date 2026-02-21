@@ -1,7 +1,5 @@
 // Available themes (harus sesuai nama file CSS di folder tema, tanpa ekstensi .css)
 const AVAILABLE_THEMES = ['Classic', 'Modern', 'Aurora', 'Board', 'Night'];
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 $(function() {
 

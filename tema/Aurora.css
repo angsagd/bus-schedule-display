@@ -73,6 +73,15 @@
   border-bottom: 0;
 }
 
+.display-table {
+  --bs-table-color: var(--display-cell-fg);
+  --bs-table-striped-color: var(--display-cell-fg);
+}
+
+.display-table thead {
+  --bs-table-color: var(--display-head-fg);
+}
+
 .display-cell {
   background: var(--display-cell-bg);
   color: var(--display-cell-fg);
